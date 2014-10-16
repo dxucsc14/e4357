@@ -1,0 +1,25 @@
+//first attempt to write a C function
+void *memcpy ( void *dest, const void *src, size_t n ) 
+{
+// read on internet "const void *" points no memory that should not be modified. 
+// "void *" points to memoery that could be modified. 
+// googled "size_t" is an unsigned integer type of at least 16 bit
+    while ( n-- ) 
+        *dest++ == *src++ ;
+// return is ok?
+    return ;
+}
+
+void *malloc ( size_t size, size_t alignment_size ) 
+{
+// googled malloc and found one tutorial that says malloc should
+//    1) reutnr a pointer to the payload of memory size, size, of memory block
+//    2) this memory is off-limmits to the DMA until release by user
+//        - How is 2) guaranteed? Firmware?
+// after reading some stuff online 30 minute time ran out and I was not able to come of up a good solution for this
+// I need
+     1.) a function that search and find a section of memorty of size "size" that is free. 
+     2.) make sure the above free memory start at an alignment determined by alignment_size 
+     3.) make sure DMA or anyone else will not access the memory
+     4.) return pointer to the mmeory.
+}
